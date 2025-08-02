@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend in Progress | PeerUp</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .maintenance-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .maintenance-content {
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: var(--border-radius-xl);
+        padding: var(--spacing-12);
+        box-shadow: var(--shadow-xl);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .maintenance-title {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-bold);
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-4);
+      }
+
+      .maintenance-description {
+        font-size: var(--text-lg);
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-8);
+        line-height: 1.6;
+      }
+
+      .highlight {
+        color: var(--primary-color);
+      }
+
+      .maintenance-logo {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-bold);
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-6);
+      }
+    </style>
+  </head>
+  <body class="landing-page">
+    <div class="gradient-background">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <span>Peer<span class="highlight">Up</span></span>
+          </div>
+        </nav>
+      </header>
+
+      <div class="maintenance-container">
+        <div class="maintenance-content">
+          <div class="maintenance-logo">
+            <span>Peer<span class="highlight">Up</span></span>
+          </div>
+          <h1 class="maintenance-title">Backend in Progress</h1>
+          <p class="maintenance-description">
+            Hey there!<br />
+            I'm currently working on the backend side of PeerUp.<br />
+            Check back soon for updates and new features!
+          </p>
+          <a href="index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-home"></i>  Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const baseURL =
+          window.location.origin +
+          window.location.pathname.replace(/\/[^\/]*\.html$/, "/");
+
+        window.history.replaceState(
+          { page: "maintenance" },
+          "Maintenance - PeerUp",
+          baseURL + "maintenance"
+        );
+
+        window.addEventListener("popstate", function (event) {
+          if (event.state) {
+            if (event.state.page === "home") {
+              window.location.href = "index.html";
+            } else if (event.state.page === "maintenance") {
+              return;
+            }
+          } else {
+            window.location.href = "index.html";
+          }
+        });
+
+        document.querySelector(".btn").addEventListener("click", function (e) {
+          e.preventDefault();
+
+          window.history.pushState(
+            { page: "home" },
+            "PeerUp - Connect. Learn. Teach.",
+            baseURL
+          );
+          window.location.href = "index.html";
+        });
+      });
+    </script>
+  </body>
+</html>
