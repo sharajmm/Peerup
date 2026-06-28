@@ -67,6 +67,15 @@ export default function RootLayout({
       >
         <AuthProvider>
           <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+            {/* Permanent maintenance notice shown across all routes */}
+            <div className="bg-yellow-400/95 text-slate-900 py-3 px-4">
+              <div className="max-w-7xl mx-auto text-center">
+                <p className="font-medium">
+                  Notice: PeerUp is under maintenance — login functionality may not work properly. We apologize for the inconvenience.
+                </p>
+              </div>
+            </div>
+
             <Navbar />
             <main className="relative">{children}</main>
           </div>
