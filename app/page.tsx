@@ -33,15 +33,6 @@ export default function HomePage() {
   return (
     <>
       <div className="min-h-screen">
-        {/* Maintenance Notice */}
-        <div className="bg-yellow-400/95 text-slate-900 py-3 px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <p className="font-medium">
-              Notice: PeerUp is under maintenance — login functionality may not work properly. We apologize for the inconvenience.
-            </p>
-          </div>
-        </div>
-
         {/* Hero Section */}
         <section className="relative px-4 py-20 md:py-32">
           <div className="max-w-6xl mx-auto text-center">
@@ -135,7 +126,7 @@ export default function HomePage() {
                     Get in Touch
                   </h2>
                   
-                  <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+                  <div className="flex flex-col md:flex-row itemscenter justify-center gap-6 mb-8">
                     <a
                       href="mailto:contact.sharajmm@gmail.com"
                       className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
